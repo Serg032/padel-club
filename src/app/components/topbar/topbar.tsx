@@ -5,7 +5,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -19,13 +18,24 @@ import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
 import Grid from "@mui/material/Grid";
 import { SwipeableDrawer } from "@mui/material";
+import Fab from "@mui/material/Fab";
+import { styled } from "@mui/material/styles";
 
-const TopBar = () => {
+const BottomBar = () => {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
+
+  const StyledFab = styled(Fab)({
+    position: "absolute",
+    zIndex: 1,
+    top: -30,
+    left: 0,
+    right: 0,
+    margin: "0 auto",
+  });
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
@@ -90,18 +100,11 @@ const TopBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" style={{ top: "auto", bottom: 0 }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
+          <StyledFab color="secondary" aria-label="add">
+            <MenuIcon onClick={toggleDrawer(true)} />
+          </StyledFab>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Central Padel
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
@@ -118,4 +121,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default BottomBar;

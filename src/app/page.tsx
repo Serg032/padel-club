@@ -3,12 +3,14 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import TopBar from "./components/topbar/topbar";
+import BottomBar from "./components/topbar/topbar";
+import HomeBody from "./components/home-body/home-body";
 
 export default function Home() {
   return (
     <>
-      <TopBar />
+      <HomeBody />
+      <BottomBar />
     </>
   );
 }
