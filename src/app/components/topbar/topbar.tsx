@@ -17,8 +17,9 @@ import BookingIcon from "@mui/icons-material/BookOnline";
 import NewsIcon from "@mui/icons-material/Newspaper";
 import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
-import Drawer from "@mui/material/Drawer";
+// import Drawer from "@mui/material/Drawer";
 import Grid from "@mui/material/Grid";
+import { SwipeableDrawer } from "@mui/material";
 
 const TopBar = () => {
   const [open, setOpen] = React.useState(false);
@@ -106,9 +107,14 @@ const TopBar = () => {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+      <SwipeableDrawer
+        anchor={"top"}
+        open={open}
+        onOpen={() => {}}
+        onClose={toggleDrawer(false)}
+      >
         {DrawerList}
-      </Drawer>
+      </SwipeableDrawer>
     </Box>
   );
 };
