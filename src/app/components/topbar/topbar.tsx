@@ -20,6 +20,7 @@ import Grid from "@mui/material/Grid";
 import { SwipeableDrawer } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import { styled } from "@mui/material/styles";
+import theme from "@/app/theme";
 
 const BottomBar = () => {
   const [open, setOpen] = React.useState(false);
@@ -35,6 +36,7 @@ const BottomBar = () => {
     left: 0,
     right: 0,
     margin: "0 auto",
+    backgroundColor: theme.palette.primary.light,
   });
 
   const DrawerList = (

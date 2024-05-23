@@ -2,21 +2,42 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import HomeImage from "../../../assets/home-club.jpeg";
 import ClubIconImage from "../../../assets/club-icon.png";
+import theme from "@/app/theme";
 
 const HomeBody = () => {
   return (
-    <Box overflow={"hidden"} color={"white"} bgcolor={"red"} height={"100vh"}>
+    <Box
+      overflow={"hidden"}
+      color={"white"}
+      bgcolor={theme.palette.secondary.main}
+      height={"100vh"}
+    >
       <Box
         width={"100%"}
         display={"flex"}
         gap={2}
         justifyContent={"space-around"}
+        alignItems={"center"}
+        padding={1}
+        paddingLeft={2}
+        paddingRight={2}
       >
-        <Typography variant={"h4"}>Central Padel Club</Typography>
-        <Image src={ClubIconImage} alt="club-icon-image" width={50} />
+        <Typography variant={"h5"}>Central Padel Club</Typography>
+        <Image src={ClubIconImage} alt="club-icon-image" width={60} />
       </Box>
-      <Image src={HomeImage} alt="home-image" />
-      <Typography variant={"h4"}>Welcome to the home page</Typography>
+      <Image src={HomeImage} alt="home-image" priority />
+      <Box padding={3} display={"flex"} flexDirection={"column"} gap={4}>
+        <Typography textAlign={"justify"} variant={"h6"}>
+          ¿Qué te ofrecemos? 👋🎾
+        </Typography>
+        <Typography textAlign={"justify"} variant={"body1"}>
+          Disfruta de la comodidad de instalaciones de primera categoría, desde
+          vestuarios recién reformados hasta un sistema domotizado para acceso e
+          iluminación durante todo el año. Nuestro servicio de parking recién
+          inaugurado y opciones gastronómicas en la cafetería, bar y terraza,
+          completan tu experiencia en CENTRAL PADEL CLUB.
+        </Typography>
+      </Box>
     </Box>
   );
 };
