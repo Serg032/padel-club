@@ -47,7 +47,9 @@ const BottomBar = () => {
             <ListItemIcon>
               <Grid display={"flex"} gap={2} alignItems={"center"}>
                 <HomeIcon />
-                <span>Home</span>
+                <Typography variant="body1" fontFamily={"fantasy"}>
+                  Home
+                </Typography>
               </Grid>
             </ListItemIcon>
           </ListItemButton>
@@ -57,7 +59,9 @@ const BottomBar = () => {
             <ListItemIcon>
               <Grid display={"flex"} gap={2} alignItems={"center"}>
                 <BookingIcon />
-                <span>Bookings</span>
+                <Typography variant="body1" fontFamily={"fantasy"}>
+                  Bookings
+                </Typography>
               </Grid>
             </ListItemIcon>
           </ListItemButton>
@@ -67,7 +71,9 @@ const BottomBar = () => {
             <ListItemIcon>
               <Grid display={"flex"} gap={2} alignItems={"center"}>
                 <NewsIcon />
-                <span>School</span>
+                <Typography variant="body1" fontFamily={"fantasy"}>
+                  School
+                </Typography>
               </Grid>
             </ListItemIcon>
           </ListItemButton>
@@ -80,7 +86,9 @@ const BottomBar = () => {
             <ListItemIcon>
               <Grid display={"flex"} gap={2} alignItems={"center"}>
                 <LoginIcon />
-                <span>Login</span>
+                <Typography variant="body1" fontFamily={"fantasy"}>
+                  Login
+                </Typography>
               </Grid>
             </ListItemIcon>
           </ListItemButton>
@@ -90,7 +98,9 @@ const BottomBar = () => {
             <ListItemIcon>
               <Grid display={"flex"} gap={2} alignItems={"center"}>
                 <RegisterIcon />
-                <span>Register</span>
+                <Typography variant="body1" fontFamily={"fantasy"}>
+                  Register
+                </Typography>
               </Grid>
             </ListItemIcon>
           </ListItemButton>
@@ -105,10 +115,19 @@ const BottomBar = () => {
           <StyledFab color="secondary" aria-label="add">
             <MenuIcon onClick={toggleDrawer(true)} />
           </StyledFab>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+            fontFamily={"fantasy"}
+          >
             Central Padel
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">
+            <Typography variant="inherit" fontFamily={"fantasy"}>
+              Login
+            </Typography>
+          </Button>
         </Toolbar>
       </AppBar>
       <SwipeableDrawer
@@ -116,6 +135,7 @@ const BottomBar = () => {
         open={open}
         onOpen={() => {}}
         onClose={toggleDrawer(false)}
+        sx={{ borderRadius: "10px 10px 0 0" }}
       >
         {DrawerList}
       </SwipeableDrawer>
