@@ -17,7 +17,6 @@ import BookingIcon from "@mui/icons-material/BookOnline";
 import NewsIcon from "@mui/icons-material/Newspaper";
 import LoginIcon from "@mui/icons-material/Login";
 import RegisterIcon from "@mui/icons-material/AppRegistration";
-// import Drawer from "@mui/material/Drawer";
 import Grid from "@mui/material/Grid";
 import { SwipeableDrawer } from "@mui/material";
 
@@ -89,7 +88,7 @@ const TopBar = () => {
   );
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed" style={{ top: "auto", bottom: 0 }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -108,7 +107,7 @@ const TopBar = () => {
         </Toolbar>
       </AppBar>
       <SwipeableDrawer
-        anchor={"top"}
+        anchor={"bottom"}
         open={open}
         onOpen={() => {}}
         onClose={toggleDrawer(false)}
