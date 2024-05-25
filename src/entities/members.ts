@@ -11,6 +11,6 @@ export interface Member {
 export interface CreateMemberCommand extends Member {}
 
 export enum MemberType {
-  ADMIN,
-  USER,
+  ADMIN = "ADMIN",
+  USER = "USER",
 }

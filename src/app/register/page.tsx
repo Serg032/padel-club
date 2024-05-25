@@ -67,11 +67,24 @@ const Register = () => {
     repeatPassword: "",
   });
 
-  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [passwordsMatch, setPasswordsMatch] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formValues);
+    console.log("passwordsMatch", passwordsMatch);
+    if (passwordsMatch) {
+      const response = await membersService.register({
+        name: formValues.name,
+        email: formValues.email,
+        username: formValues.username,
+        password: formValues.password,
+        money: 0,
+        type: MemberType.USER,
+      });
+      console.log(response);
+    } else {
+      console.log("Las contraseñas no coinciden");
+    }
   };
 
   return (
@@ -101,6 +114,8 @@ const Register = () => {
           />
           <CustomTextField
             label="Email"
+            type="email"
+            required={true}
             variant="outlined"
             onChange={(event) =>
               setFormValues({
@@ -112,6 +127,7 @@ const Register = () => {
           <CustomTextField
             label="Nombre de usuario"
             variant="outlined"
+            required={true}
             onChange={(event) => {
               setFormValues({
                 ...formValues,
@@ -122,53 +138,35 @@ const Register = () => {
           <CustomTextField
             label="contraseña"
             variant="outlined"
+            required={true}
             type="password"
             onChange={(event) => {
+              const newPassword = event.target.value;
               setFormValues({
                 ...formValues,
-                password: event.target.value,
+                password: newPassword,
               });
-              setPasswordsMatch(
-                event.target.value !== formValues.repeatPassword ||
-                  event.target.value === "" ||
-                  formValues.repeatPassword === ""
-              );
+              setPasswordsMatch(newPassword === formValues.repeatPassword);
             }}
           />
           <CustomTextField
             label="Repetir contraseña"
             variant="outlined"
+            required={true}
             type="password"
             onChange={(event) => {
+              const newRepeatPassword = event.target.value;
               setFormValues({
                 ...formValues,
-                repeatPassword: event.target.value,
+                repeatPassword: newRepeatPassword,
               });
-              setPasswordsMatch(
-                event.target.value !== formValues.password ||
-                  event.target.value === "" ||
-                  formValues.password === ""
-              );
+              setPasswordsMatch(newRepeatPassword === formValues.password);
             }}
           />
           <CustomButton
             type="submit"
             variant="contained"
-            disabled={passwordsMatch}
-            onClick={() => {
-              membersService
-                .register({
-                  name: formValues.name,
-                  email: formValues.email,
-                  username: formValues.username,
-                  password: formValues.password,
-                  money: 0,
-                  type: MemberType.USER,
-                })
-                .then((response) => {
-                  console.log(response);
-                });
-            }}
+            disabled={!passwordsMatch}
           >
             <Typography variant="button">Registrarse</Typography>
           </CustomButton>
