@@ -22,21 +22,15 @@ const HomeBody = () => {
         paddingLeft={2}
         paddingRight={2}
       >
-        <Typography variant={"h5"} fontFamily={"fantasy"}>
-          Central Padel Club
-        </Typography>
+        <Typography variant={"h5"}>Central Padel Club</Typography>
         <Image src={ClubIconImage} alt="club-icon-image" width={60} />
       </Box>
       <Image src={HomeImage} alt="home-image" priority />
       <Box padding={3} display={"flex"} flexDirection={"column"} gap={4}>
-        <Typography textAlign={"justify"} variant={"h6"} fontFamily={"fantasy"}>
+        <Typography textAlign={"justify"} variant={"h6"}>
           ¿Qué te ofrecemos? 👋🎾
         </Typography>
-        <Typography
-          textAlign={"justify"}
-          variant={"body1"}
-          fontFamily={"fantasy"}
-        >
+        <Typography textAlign={"justify"} variant={"body1"}>
           Disfruta de la comodidad de instalaciones de primera categoría, desde
           vestuarios recién reformados hasta un sistema domotizado para acceso e
           iluminación durante todo el año. Nuestro servicio de parking recién

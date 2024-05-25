@@ -12,7 +12,7 @@ import EventAvailableOutlinedIcon from "@mui/icons-material/EventAvailableOutlin
 const OurServices = () => {
   return (
     <Box padding={3} display={"flex"} flexDirection={"column"} gap={4}>
-      <Typography variant={"h6"} textAlign={"justify"} fontFamily={"fantasy"}>
+      <Typography variant={"h6"} textAlign={"justify"}>
         Nuestros Servicios 🗓️
       </Typography>
       <Box display={"flex"} flexDirection={"column"} gap={4}>
@@ -32,12 +32,7 @@ const OurServices = () => {
               alignItems={"center"}
               gap={2}
             >
-              <Typography
-                variant={"h6"}
-                color={"white"}
-                fontWeight={300}
-                fontFamily={"fantasy"}
-              >
+              <Typography variant={"h6"} color={"white"} fontWeight={300}>
                 Escuela
               </Typography>
               <SchoolOutlinedIcon fontSize="large" htmlColor="white" />
@@ -60,12 +55,7 @@ const OurServices = () => {
               alignItems={"center"}
               gap={2}
             >
-              <Typography
-                variant={"h6"}
-                color={"white"}
-                fontWeight={300}
-                fontFamily={"fantasy"}
-              >
+              <Typography variant={"h6"} color={"white"} fontWeight={300}>
                 Partidos Nivelados
               </Typography>
               <SportsTennisOutlinedIcon fontSize="large" htmlColor="white" />
@@ -88,12 +78,7 @@ const OurServices = () => {
               alignItems={"center"}
               gap={2}
             >
-              <Typography
-                variant={"h6"}
-                color={"white"}
-                fontWeight={300}
-                fontFamily={"fantasy"}
-              >
+              <Typography variant={"h6"} color={"white"} fontWeight={300}>
                 Competicion
               </Typography>
               <EmojiEventsOutlinedIcon fontSize="large" htmlColor="white" />
@@ -116,12 +101,7 @@ const OurServices = () => {
               alignItems={"center"}
               gap={2}
             >
-              <Typography
-                variant={"h6"}
-                color={"white"}
-                fontWeight={300}
-                fontFamily={"fantasy"}
-              >
+              <Typography variant={"h6"} color={"white"} fontWeight={300}>
                 Eventos
               </Typography>
               <EventAvailableOutlinedIcon fontSize="large" htmlColor="white" />
